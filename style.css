@@ -1,0 +1,232 @@
+/* ===== Сброс и база ===== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', Arial, sans-serif;
+  background: #12121c;
+  color: #e6e6f0;
+  line-height: 1.6;
+}
+
+a {
+  color: #7cf58c;
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: underline;
+}
+
+/* ===== Шапка ===== */
+header {
+  background: linear-gradient(90deg, #1a1a2e, #2a1a4a);
+  padding: 15px 40px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 2px solid #7c3aed;
+}
+
+.logo-block {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.logo-block img {
+  width: 55px;
+  height: 55px;
+}
+
+.logo-block h1 {
+  font-size: 26px;
+  color: #b388ff;
+  letter-spacing: 1px;
+}
+
+/* ===== Меню ===== */
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 25px;
+}
+
+nav a {
+  color: #e6e6f0;
+  font-weight: 600;
+  padding: 8px 14px;
+  border-radius: 6px;
+  transition: 0.25s;
+}
+
+nav a:hover,
+nav a.active {
+  background: #7c3aed;
+  color: #fff;
+  text-decoration: none;
+}
+
+/* ===== Контейнер ===== */
+.container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 40px 20px;
+}
+
+/* ===== Рекламный баннер ===== */
+.banner {
+  background: linear-gradient(135deg, #7c3aed, #22c55e);
+  border-radius: 14px;
+  padding: 40px;
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.banner h2 {
+  font-size: 34px;
+  margin-bottom: 12px;
+  color: #fff;
+}
+
+.banner p {
+  font-size: 18px;
+  color: #f0f0f0;
+}
+
+.banner .cta {
+  display: inline-block;
+  margin-top: 20px;
+  background: #12121c;
+  color: #7cf58c;
+  padding: 12px 26px;
+  border-radius: 8px;
+  font-weight: bold;
+  transition: 0.25s;
+}
+
+.banner .cta:hover {
+  background: #000;
+  text-decoration: none;
+  transform: scale(1.05);
+}
+
+/* ===== Карточки товаров ===== */
+.products {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 25px;
+  margin-top: 25px;
+}
+
+.card {
+  background: #1c1c2b;
+  border: 1px solid #2a2a44;
+  border-radius: 12px;
+  padding: 18px;
+  text-align: center;
+  transition: 0.3s;
+}
+
+.card:hover {
+  border-color: #7c3aed;
+  transform: translateY(-5px);
+}
+
+.card img {
+  width: 100%;
+  height: 160px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-bottom: 12px;
+}
+
+.card h3 {
+  color: #b388ff;
+  margin-bottom: 8px;
+}
+
+.card .price {
+  color: #7cf58c;
+  font-size: 20px;
+  font-weight: bold;
+  margin-top: 10px;
+}
+
+/* ===== Таблица прайса (светлые ячейки) ===== */
+table.price {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 25px;
+  border-radius: 10px;
+  overflow: hidden;
+  background: #f4f1ea;         /* светло-бежевый фон таблицы */
+}
+
+table.price th,
+table.price td {
+  padding: 14px 18px;
+  border: 1px solid #c9c2b5;
+  text-align: left;
+  color: #2a2a44;              /* тёмный текст на светлом фоне */
+}
+
+table.price th {
+  background: #7c3aed;         /* фиолетовые заголовки */
+  color: #fff;
+  font-size: 16px;
+  border-color: #5b21b6;
+}
+
+/* Чередование строк — светлые тона, без чёрного */
+table.price tr:nth-child(even) td {
+  background: #f9f7f2;         /* почти белый */
+}
+
+table.price tr:nth-child(odd) td {
+  background: #ede8dd;         /* светло-бежевый */
+}
+
+table.price .highlight {
+  background: #b9f0c4 !important;   /* акция — светло-зелёный */
+  color: #14532d;
+  font-weight: bold;
+}
+
+table.price .vip {
+  background: #fde68a !important;   /* VIP — светло-жёлтый */
+  color: #78350f;
+  font-weight: bold;
+}
+
+table.price td.price-cell {
+  color: #15803d;              /* тёмно-зелёный текст цены на светлом фоне */
+  font-weight: bold;
+  text-align: right;
+}
+
+/* ===== Футер ===== */
+footer {
+  background: #0d0d17;
+  text-align: center;
+  padding: 22px;
+  margin-top: 60px;
+  color: #888;
+  border-top: 2px solid #7c3aed;
+}
+
+/* ===== Адаптив ===== */
+@media (max-width: 700px) {
+  header {
+    flex-direction: column;
+    gap: 12px;
+  }
+  nav ul {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+  }
+  .banner h2 { font-size: 24px; }
+}
